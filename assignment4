@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout Example</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navigation Bar - Flexbox */
+        nav {
+            background: #333;
+            padding: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        /* Main Content - Grid */
+        .container {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            grid-gap: 20px;
+            padding: 20px;
+        }
+
+        .main-content {
+            background: #f4f4f4;
+            padding: 20px;
+        }
+
+        .sidebar {
+            background: #ddd;
+            padding: 20px;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 768px) { /* Tablet */
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) { /* Mobile */
+            .main-content,
+            .sidebar {
+                padding: 10px;
+            }
+            
+            .nav-links a {
+                display: block;
+                text-align: center;
+                width: 100%;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main class="main-content">
+            <h1>Main Content</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </main>
+
+        <aside class="sidebar">
+            <h2>Sidebar</h2>
+            <p>Additional information</p>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Responsive Layout Example</p>
+    </footer>
+</body>
+</html>
